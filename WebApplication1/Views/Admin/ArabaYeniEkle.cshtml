@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "ArabaYeniEkle";
+    Layout = "~/Views/Shared/_AdminLTE.cshtml";
+}
+
+@model ArabaViewModel
+
+
+
+<form asp-action="ArabaYeniEkle" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <label asp-for="arabadi"></label>
+    <input type="text" asp-for="arabadi" class="form-control">
+    <span asp-validation-for="arabadi" class="text-danger"></span>
+
+
+    <label asp-for="arabamotor"></label>
+    <input type="text" asp-for="arabamotor" class="form-control">
+    <span asp-validation-for="arabamotor" class="text-danger"></span>
+
+    <label asp-for="arabakm"></label>
+    <input type="text" asp-for="arabakm" class="form-control">
+    <span asp-validation-for="arabakm" class="text-danger"></span>
+
+    <label asp-for="arabavitestipi"></label>
+    <input type="text" asp-for="arabavitestipi" class="form-control">
+    <span asp-validation-for="arabavitestipi" class="text-danger"></span>
+
+    <label asp-for="arabayakıt"></label>
+    <input type="text" asp-for="arabayakıt" class="form-control">
+    <span asp-validation-for="arabayakıt" class="text-danger"></span>
+
+    <label asp-for="arabaacıklama"></label>
+    <input type="text" asp-for="arabaacıklama" class="form-control">
+    <span asp-validation-for="arabaacıklama" class="text-danger"></span>
+
+
+    <label asp-for="fiyat"></label>
+    <input type="text" asp-for="fiyat" class="form-control">
+    <span asp-validation-for="fiyat" class="text-danger"></span>
+
+
+
+    <label asp-for="markaid"></label>
+    @Html.DropDownListFor(x=>x.markaid,(List<SelectListItem>)ViewBag.yakıt)
+
+
+
+    <label asp-for="Resim"></label>
+    <input asp-for="Resim" class="form-control" />
+    <br />
+
+
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

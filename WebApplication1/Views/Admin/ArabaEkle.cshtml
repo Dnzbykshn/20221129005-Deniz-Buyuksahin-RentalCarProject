@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "ArabaEkle";
+    Layout = "~/Views/Shared/_AdminLTE.cshtml";
+}
+
+@model List<ArabaViewModel>
+
+
+<a asp-action="ArabaYeniEkle" asp-controller="Admin" class="btn btn-success">Araba Ekle</a>
+
+<div class="col-md-12">
+    <div class="card mb-4" style="margin-top:20px;">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-border" id="tbaraba">
+                    <thead>
+                        <tr>
+                            <th>#.No</th>
+                            <th>Araba Adi</th>
+                            <th>Araba Km</th>
+                            <th>Araba Yakıt</th>
+                            <th>Araba Resim</th>
+                            <th>İslemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int i = 1;
+                        }
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@x.arabadi</td>
+                                <td>@x.arabakm</td>
+                                <td>@x.arabayakıt</td>
+                                <td><img src="~/Araba/@x.ResimData" style="width:150px;height:100px;" />   </td>
+                                <td>
+                                    <a class="btn btn-info" asp-action="ArabaDetail" asp-controller="Admin" asp-route-id="@x.id">Güncelle</a>
+                                    <a class="btn btn-danger" asp-action="ArabaDelete" asp-controller="Admin" asp-route-id="@x.id">Sil</a>
+
+
+                                </td>
+                            </tr>
+                            i = i + 1;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

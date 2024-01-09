@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "ArabaBul";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<ArabaViewModel>
+@foreach(var item in Model)
+{
+
+    <div class="col-md-12 d-flex justify-content-center">
+        <h1> @item.arabadi</h1>
+    </div>
+
+
+    <div class="col-md-12 d-flex justify-content-center">
+        <img src="~/Araba/@item.ResimData" class="img-fluid" width="50%" height="40%" alt="...">
+    </div>
+    <div class="row">
+       
+        <div class="col-md-4" style="margin-top:3%">
+           
+            <p><strong>Araba Açıklama</strong> @item.arabaacıklama</p>
+            <p><strong>Araba Motor Tipi</strong> @item.arabamotor</p>
+            <p><strong>Araba Kilometresi</strong> @item.arabakm</p>
+            <p><strong>Araba Yakıt</strong> @item.arabayakıt</p>
+        </div>
+        <div class="col-md-8 d-flex justify-content-end" style="margin-top:3%">
+            <p>
+                <strong><h1>Araba Fiyat @item.fiyat ₺</h1></strong><br><br>
+              
+        </div>
+    </div>
+    
+
+
+}
+
+
